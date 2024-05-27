@@ -22,8 +22,9 @@ export const Option = (props: OptionProps) => {
 
 	const handleClick =
 		(clickedValue: OptionType['value']): MouseEventHandler<HTMLLIElement> =>
-		() => {
+		(e) => {
 			onClick(clickedValue);
+			e.stopPropagation();
 		};
 
 	useEnterOptionSubmit({
